@@ -1,15 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function QuoteCard(props) {
+  const quotes = useSelector( state => state.quotes)
+  console.log('current state in QuoteCard', quotes)
+
+  quotes.map(quote =>{
   return (
     <div>
       <div className="card card-inverse card-success card-primary mb-3 text-center">
         <div className="card-block">
           <blockquote className="card-blockquote">
-            <p>{/*Render Quote Content*/}</p>
+            <p>{quote.content}</p>
             <footer>
               - author{" "}
-              <cite title="Source Title">{/*Render Quote Author*/}</cite>
+              <cite title="Source Title">{quote.author}</cite>
             </footer>
           </blockquote>
         </div>
@@ -33,7 +38,8 @@ function QuoteCard(props) {
         </div>
       </div>
     </div>
-  );
+  );})
+  
 }
 
 export default QuoteCard;

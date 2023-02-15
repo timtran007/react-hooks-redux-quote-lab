@@ -12,11 +12,12 @@ function Quotes() {
       <div className="container">
         <div className="row">
           <div className="col-md-4">
+            <QuoteCard />
             {/*
               TODO:
 
               Render Quotes With QuoteCard component and pass down callback props for removing, upvoting and downvoting quotes
-              */}
+            */}
           </div>
         </div>
       </div>
